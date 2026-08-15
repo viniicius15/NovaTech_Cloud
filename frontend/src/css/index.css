@@ -1022,3 +1022,129 @@ input {
     flex-wrap: wrap;
   }
 }
+
+.campo-erro {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #e5484d;
+}
+
+.campo-dica {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #888;
+}
+
+/* Adicione este conteúdo ao final do seu frontend/src/css/index.css */
+
+.section-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.campo-erro {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #e5484d;
+}
+
+.campo-dica {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #888;
+}
+
+.produto-form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.produto-form-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.produto-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.produto-form-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.produto-form-fechar {
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: #888;
+}
+
+/* Estilos isolados para os campos DENTRO do modal de produto,
+   para não depender do tema escuro da tela de login */
+
+.produto-form-card .input-group {
+  margin-bottom: 18px;
+}
+
+.produto-form-card .input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.produto-form-card .input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: #fafafa;
+}
+
+.produto-form-card .input-wrapper span {
+  color: #888;
+  font-size: 14px;
+}
+
+.produto-form-card .input-wrapper input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 15px;
+  color: #111;
+}
+
+.produto-form-card .input-wrapper input::placeholder {
+  color: #aaa;
+}
+
+.produto-form-card .login-button {
+  width: 100%;
+  margin-top: 8px;
+}

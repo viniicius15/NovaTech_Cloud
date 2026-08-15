@@ -8,8 +8,9 @@ services:
       - "3000:3000"
     environment:
       PORT: 3000
-      DATABASE_URL: postgresql://novatech:novatech@db:5432/novatech
+      DATABASE_URL: postgresql://novatech:${POSTGRES_PASSWORD}@db:5432/novatech
       JWT_SECRET: ${JWT_SECRET}
+      FRONTEND_URL: ${FRONTEND_URL}
     depends_on:
       - db
 
@@ -19,7 +20,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: novatech
-      POSTGRES_PASSWORD: novatech
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: novatech
     volumes:
       - postgres_data:/var/lib/postgresql/data
