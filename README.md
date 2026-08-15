@@ -78,16 +78,6 @@ Para parar os containers:
 docker compose down
 ```
 
-## ⚙️ Configuração
-
-Crie os arquivos `.env` necessários no backend e configure as variáveis de ambiente, como:
-
-```env
-PORT=3000
-DATABASE_URL=postgresql://novatech:novatech@db:5432/novatech
-JWT_SECRET=sua_chave_secreta
-```
-
 > Não envie arquivos `.env` ou outras informações sensíveis para o GitHub.
 
 ## ▶️ Execução
