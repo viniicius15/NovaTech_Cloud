@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "src"
+  ],
+  "ignore": [
+    "node_modules",
+    "generated",
+    "prisma/migrations"
+  ],
+  "ext": "js,json"
+}
