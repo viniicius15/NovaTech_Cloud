@@ -3,19 +3,15 @@ services:
   api:
     build: ./backend
     container_name: novatech-api
-    command: npm run dev
+    restart: unless-stopped
     ports:
       - "3000:3000"
     environment:
       PORT: 3000
       DATABASE_URL: postgresql://novatech:novatech@db:5432/novatech
-      JWT_SECRET: troque-por-uma-string-aleatoria-longa-e-secreta
+      JWT_SECRET: ${JWT_SECRET}
     depends_on:
       - db
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
-      - /app/generated
 
   db:
     image: postgres:17-alpine
@@ -25,16 +21,19 @@ services:
       POSTGRES_USER: novatech
       POSTGRES_PASSWORD: novatech
       POSTGRES_DB: novatech
-    ports:
-      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    # sem "ports" aqui -> não fica exposto pra internet
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: ${VITE_API_URL}
     container_name: novatech-frontend
+    restart: unless-stopped
     ports:
-      - "5173:80"
+      - "80:80"
     depends_on:
       - api
 
